@@ -6,7 +6,7 @@ App developers face a choice when a user taps a URL to either launch a web brows
 
 Chrome custom tabs are a special case of the launch a browser scenario. The Chrome browser in the custom tabs mode has a minimalist look, no navigation bar, no address bar, no tabs. By setting the color of the toolbar and the back icon asset, the app developer can blend Chrome custom tabs in the overall design, make transitions between native and web content more seamless without having to resort to a WebView.
 
-Chrome custom tabs are the Chrome implementation of the native to web content transition. Other browsers and apps can decide to offer an identical API and the developers are free to choose any custom tabs running on the device. The mechanisms of discovering custom tabs applications is based on the Android intent resolver. The application requests a list of all components that can handle the URL and have the custom tabs API. The developer can differentiate the components by package name and if available, select Chrome.
+Chrome custom tabs are the Chrome implementation of the native to web content transition. Other browsers and apps can decide to offer an identical API and the developers are free to choose any custom tabs running on the device. The mechanism of discovering custom tabs applications is based on the Android intent resolver. The application requests from the OS a list of all apps that can handle the URL and have the custom tabs API. The developer can differentiate the apps by package name and if available, select Chrome.
 
 ## Chrome custom tabs vs WebView
 
