@@ -10,7 +10,7 @@ Chrome custom tabs are the Chrome implementation of the native to web content tr
 
 ## Chrome custom tabs vs WebView
 
-Once custom tabs have been started, the application has no control. It only receives callbacks with the GET URLS of the Chrome navigation.
+Once custom tabs have been started, the application has no control. It only receives callbacks with the GET URLS of the Chrome navigation. The developer can start Chrome custom tabs but can not stop it.
 
 ### Security
 WebView is a component in the Android framework, part of the application. The developer has control over the lifecycle of the WebView, can load, read , create and alter the content, intercept and alter the navigation.
@@ -20,7 +20,7 @@ Chrome custom tabs are part of Chrome, a separate application. The content is lo
 ### History
 WebView is separated from any other application. No history, cookies are shared with the WebView. No data is saved once the WebView is destroyed. Every WebView starts with a clean state.
 
-Chrome custom tabs is part of Chrome, any active sessions or cookies are shared with the custom tabs mode. Any logins done in the custom tabs mode remain active in the Chrome browser. The developer can start Chrome custom tabs but can not stop it.
+Chrome custom tabs is part of Chrome, any active sessions or cookies are shared with the custom tabs mode. Any logins done in the custom tabs mode remain active in the Chrome browser.
 
 # Oauth
 
@@ -36,7 +36,7 @@ Using a custom scheme REDIRECT_URI like <code>fb{CLIENT_ID}://authorize</code>, 
 
 When the Oauth URL is open with a web browser, the application is paused and sent to the background. When the URL is open with Custom tabs, Chrome prevents the application from being evicted by the system while on top of it, by raising its importance to the "foreground" level. This puts the application in a special state, outside the regular Android flow and prevents it from responding to the REDIRECT_URI. At the same time, it does not receive a callback for the custom scheme, as the REDIRECT_URI is not handled by Chrome, preventing the application from ever knowing the Ouath flow is complete.
 
-If the Oauth flow is done with a random web browser, on REDIRECT_URI, the client application will be started and will take focus. From the moment the Oauth URL was requested until REDIRECT_URI was called, the client application was paused, unaware of the Oauth navigation in any way.
+If the Oauth flow is done with a random web browser, on REDIRECT_URI, the client application will be resumed and will take focus. From the moment the Oauth URL was requested until REDIRECT_URI was called, the client application was paused, unaware of the Oauth navigation in any way.
 
 The user will see a full flow app -> web browser -> app.
 
