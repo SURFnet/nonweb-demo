@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/andrei/Workspace/custom-tabs-client-master/Application/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Oauth</string>
+    <string name="browser_button_text">Browser sfoauth redirect</string>
+    <string name="connect_button_text">Connect to Chrome Custom Tabs</string>
+    <string name="custom_tabs_http">Chrome custom tabs http redirect</string>
+    <string name="custom_tabs_sfoauth">Custom tabs sfoauth redirect</string>
+    <string name="download_button_text">Download Chrome Custom Tabs</string>
+    <string name="ouath_button_text">Chrome Custom Tabs Oauth flow</string>
+</resources>
