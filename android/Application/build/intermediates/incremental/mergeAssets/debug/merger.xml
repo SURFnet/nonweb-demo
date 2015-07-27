@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="unspecified"><source path="/Users/andrei/Workspace/custom-tabs-client-master/Application/build/intermediates/exploded-aar/custom-tabs-client-master/customtabs/unspecified/assets"/></dataSet><dataSet config="main"><source path="/Users/andrei/Workspace/custom-tabs-client-master/Application/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/andrei/Workspace/custom-tabs-client-master/Application/src/debug/assets"/></dataSet></merger>
