@@ -1,178 +1,54 @@
-# Custom Tabs - Example and Usage
+# Chrome Custom Tabs
 
-## Summary
+## What are Chrome custom tabs?
 
-This presents an example application using Custom Tabs, and a possible usage of
-both the intent and the background service APIs. It covers UI customization,
-callback setup, pre-warming and pre-fetching, and lifecycle management. Here we
-assume that Chrome's implementation of Custom Tabs is used. Note that this
-feature is in no way specific to Chrome, but slight differences may exist with
-other implementations.
+App developers face a choice when a user taps a URL to either launch a browser, or build their own in-app browser using WebViews.
 
-## Introduction
+Chrome custom tabs are a special case of the launch a browser scenario. The Chrome browser in the custom tabs mode has a minimalist look, no navigation bar, no address bar, no tabs. By setting the color of the toolbar and the back icon asset, the app developer can blend Chrome custom tabs in the overall design, make transitions between native and web content more seamless without having to resort to a WebView.
 
-Chrome Custom Tabs provides a way for an application to customize and interact
-with a Chrome `Activity` on Android, to make it a part of the application
-experience, while retaining the full functionality and performance of a complete
-web browser.
+Chrome custom tabs are the Chrome implementation of the native to web content transition. Other browsers and apps can device to offer an identical API and the developers are free to choose any custom tabs running on the device. The mechanisms of discovering custom tabs applications is based on the Android intent resolver. The application requests a list of all components that can handle the URL and have the custom tabs API. The developer can differentiate the components by package name and if available, select Chrome.
 
-### Overview
+## Chrome custom tabs vs WebView
 
-In particular, this covers:
+Once custom tabs have been started, the application has no control. It only receives callbacks with the GET URLS of the Chrome navigation.
 
-* UI customization:
-  * Toolbar color
-  * Action button
-  * Custom menu items
-  * Custom in/out animations
-* Navigation awareness: the browser delivers callbacks to the application for
-  navigations in the Custom Tab.
-* Performance optimizations:
-  * Pre-warming of the Browser in the background, without stealing resources
-    from the application
-  * Providing a likely URL in advance to the browser, which may perform
-    speculative work, speeding up page load time.
+### Security
+WebView is a component in the Android framework, part of the application. The developer has control over the lifecycle of the WebView, can load, read , create and alter the content, intercept and alter the navigation.
 
-These features are enabled through two mechanisms:
+Chrome custom tabs are part of Chrome, a separate application. The content is loaded from a provided URL. It is not possible to create, read or alter the content. The custom tabs are a black box. The only information the app developer can get back are the GET URLs of the content as the user navigates inside the custom tabs.
 
-* Adding extras to the `ACTION_VIEW` intent sent to the browser.
-* Connecting to a bound service in the target browser.
+### History
+WebView is separated from any other application. No history, cookies are shared with the WebView. No data is saved once the WebView is destroyed. Every WebView starts with a clean state.
 
-### Code Organization
+Chrome custom tabs is part of Chrome, any active sessions or cookies are shared with the custom tabs mode. Any logins done in the custom tabs mode remain active in the Chrome browser. The developer can start Chrome custom tabs but can not stop it.
 
-The code in this repository falls into two parts:
+# Oauth
 
-* `Application/`: Example application code, in the package
-  `org.chromium.customtabsclient`. Feel free to re-use the classes within this
-  directory, which are only provided as a convenience. In particular,
-  `CustomTabUibuilder` and `CustomTabActivityManager` can be re-used. This code
-  is not required to take advantage of Custom Tabs.
-* `customtabs/`: Code within this directory is in the package
-  `android.support.customtabs`. This contains code that one needs to use Custom
-  Tabs, regardless of the target browser. We encourage you to copy this code
-  as-is in your own projects, without modifications.
+Mobile apps cannot maintain the confidentiality of their client secret. Because of this, mobile apps must use an OAuth flow that does not require a client secret. The storage of the client id is unrelated to the custom tabs or the WebView.
 
-**Compatibility Note:** This version of the example application requires API
-  level 18 (Android 4.3). We expect a forthcoming revision to require API level
-  16 (Android 4.1), like Chrome.
+Due to the fact WebView can't prevent the parent application form intercepting the user credentials, only the browser and custom tabs are investigated.
 
-## UI Customization
+>https://facebook.com/dialog/oauth?response_type=token&client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&scope=email
 
-UI customization is done through extras added to the `ACTION_VIEW` intent sent
-to the browser. One can use the convenience builder class
-`CustomTabUiBuilder`. An instance of this class has to be provided to
-`CustomTabActivityManager.launchUrl()` to load a URL in a Custom Tab.
+## Custom scheme REDIRECT_URI
 
-**Example:**
-```java
-CustomTabUiBuilder uiBuilder = new CustomTabUiBuilder().setToolbarColor(Color.BLUE);
-// Application exit animation, Chrome enter animation.
-uiBuilder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
-// vice versa
-uiBuilder.setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+Using a custom scheme REDIRECT_URI like <code>fb{CLIENT_ID}://authorize</code>, at the end of the flow, when a token is provided, the Android system uses the intent resolver to find what applications can handle the result. If the REDIRECT_URI matches more than one application, the user is presented with a choice. The applications in the list can not read the data until the user makes a selection. In normal circumstances, only the application  that requested the token can handle the result and Android starts it by default, no input from the user. The only way the example REDIRECT_URI can match a second application is if the application deliberately copied the scheme in order to try to be chosen by the user.
 
-customTabManager.launchUrl(this, session, url, uiBuilder);
-```
+When the Oauth URL is open with a web browser, the application is paused and sent to the background. When the URL is open with Custom tabs, Chrome prevents the application from being evicted by the system while on top of it, by raising its importance to the "foreground" level. This puts the application in a special state, outside the regular Android flow and prevents it from responding to the REDIRECT_URI. At the same time, it does not receive a callback for the custom scheme, as the REDIRECT_URI is not handled by Chrome, preventing the application form ever knowing the Ouath flow is complete.
 
-In this example, no UI customization is done, aside from the animations and the
-toolbar color. The general usage is:
+If the Oauth flow was done with a random browser, on REDIRECT_URI, the client application will be started and will take focus. From the moment the Oauth URL was requested until REDIRECT_URI was called, the client application was paused, unaware of the Oauth navigation in any way.
 
-1. Create an instance of `CustomTabUiBuilder`
-2. Build the UI using the methods of `CustomTabUiBuilder`
-3. Provide this instance to `CustomTabActivityManager.launchUrl()`
+The user will see a full flow app -> web browser -> app.
 
-The communication between the custom tab activity and the application is done
-via pending intents. For each interaction leading back to the application (menu
-items and action button), a
-[`PendingIntent`](http://developer.android.com/reference/android/app/PendingIntent.html)
-must be provided, and will be delivered upon activation of the corresponding UI
-element.
+## HTTP REDIRECT_URI
 
-## Navigation
+Using a regular HTTP scheme for REDIRECT_URI, like <code>https://www.facebook.com/connect/login_success.html</code>, rules out using a random browser as the client application can never know the Oauth has completed. The web browser would just load the REDIRECT_URI.
 
-The hosting application can elect to get notifications about navigations in a
-Custom Tab. This is done using a callback extending
-`android.support.customtabs.CustomTabsCallback`, that is:
+While technically possible using the custom tabs mode, there are a few UI issues:
 
-```java
-void onUserNavigationStarted(Uri url, Bundle extras);
-void onUserNavigationFinished(Uri url, Bundle extras);
-```
+- a "success" web page must exist to act as the REDIRECT_URI so the user will know the Oauth is complete
+- the user must end the custom tabs navigation
 
-This callback is set when a `CustomTabsSession` object is created, through
-`CustomTabsSession.newSession()`. It thus has to be set:
+# Conclusion
 
-* After binding to the background service
-* Before launching a URL in a custom tab
-
-The methods are analogous to `WebViewClient.onPageStarted()` and
-`WebViewClient.onPageFinished()`, respectively (see
-[WebViewClient](http://developer.android.com/reference/android/webkit/WebViewClient.html)).
-
-## Optimization
-
-**WARNING:** The browser treats the calls described in this section only as
-  advice. Actual behavior may depend on connectivity, available memory and other
-  resources.
-
-The application can communicate its intention to the browser, that is:
-* Warming up the browser
-* Indicating a likely navigation to a given URL
-
-In both cases, communication with the browser is done through a bound background
-service. This binding is done by
-`CustomTabClient.bindCustomTabsService()`. After the service is connected, the
-client has access to a `CustomTabsClient` object, valid until the service gets
-disconnected. This client can be used in these two cases:
-
-* **Warmup**: Warms up the browser to make navigation faster. This is expected
-  to create some CPU and IO activity, and to have a duration comparable to a
-  normal Chrome startup. Once started, Chrome will not use additional
-  resources. This is triggered by `CustomTabsClient.warmup()`.
-* **Hint about a likely future navigation:** Indicates that a given URL may be
-  loaded in the future. Chrome may perform speculative work to speed up page
-  load time. The application must call `CustomTabsClient.warmup()` first. This
-  is triggered by `CustomTabsSession.mayLaunchUrl()`.
-
-**Example:**
-```java
-// Binds to the service.
-CustomTabsClient.bindCustomTabsService(context, packageName, new CustomTabsServiceConnection() {
-    @Override
-    public void onCustomTabsServiceConnected(ComponentName name, CustomTabsClient client) {
-        // mClient is now valid.
-        mClient = client;
-    }
-
-    @Override
-    public void onCustomTabsServiceConnected(ComponentName name, CustomTabsClient client) {
-        // mClient is no longer valid. This also invalidates sessions.
-        mClient = null;
-    }
-});
-
-// With a valid mClient.
-mClient.warmup(0);
-
-// With a valid mClient.
-CustomTabsSession session = mClient.newSession(new CustomTabsCallback());
-session.mayLaunchUrl("https://www.google.com", null, null);
-
-// Shows the Custom Tab
-CustomTabManager.launchUrl(context, session, "https://www.google.com", uiBuilder);
-```
-
-**Tips**
-
-* If possible, issue the warmup call in advance to reduce waiting when the
-  custom tab activity is started.
-* If possible, advise Chrome about the likely target URL in advance, as the
-  loading optimization can take time (requiring network traffic, for instance).
-
-**Bugs**
-
-Issues and bugs related to these examples and the Chrome implementation of
-Custom Tabs are tracked in the Chromium Issue Tracker.
-[This template](https://code.google.com/p/chromium/issues/entry?summary=Issue%20Summary&comment=Application%20Version%20(from%20%22Chrome%20Settings%20%3E%20About%20Chrome%22):%20%0DAndroid%20Build%20Number%20(from%20%22Android%20Settings%20%3E%20About%20Phone/Tablet%22):%20%0DDevice:%20%0D%0DSteps%20to%20reproduce:%20%0D%0DObserved%20behavior:%20%0D%0DExpected%20behavior:%20%0D%0DFrequency:%20%0D%3Cnumber%20of%20times%20you%20were%20able%20to%20reproduce%3E%20%0D%0DAdditional%20comments:%20%0D&labels=OS-Android,Cr-UI-Browser-Mobile-CustomTabs)
-will notify relevant people faster than issues on GitHub, this is the preferred
-way to report.
+Chrome custom tabs can be used for Oauth if the auth flow ends with a "success" web page that instructs the users how to return to the application.
