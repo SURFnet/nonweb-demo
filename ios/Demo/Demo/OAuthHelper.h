@@ -10,4 +10,8 @@
 
 @interface OAuthHelper : NSObject
 
+typedef void (^AuthenticationBlock)(NSString *token);
+
++ (NSURL*)browserLoginUrlWithBlock:(AuthenticationBlock)block;
++ (BOOL)applicationOpenUrl:(NSURL*)url;
 @end

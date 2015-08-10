@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-
-#define SURFNET_AUTH_URL =
+#import "OAuthHelper.h"
 
 @interface ViewController ()
 
@@ -26,8 +25,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Called when the user selected the browser login
 - (IBAction)browserLoginTouchUpInside:(id)sender {
+    [[UIApplication sharedApplication] openURL:[OAuthHelper browserLoginUrlWithBlock:^(NSString *token) {
+        [self displayToken:token];
+    }]];
+}
 
+// Called when the user selected the in-app login
+- (IBAction)inAppLoginTouchUpInside:(id)sender {
+}
+
+- (void)displayToken:(NSString*)token {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Access token"
+                                                    message:[NSString stringWithFormat:@"Access token is: %@", token]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles: nil];
+    [alert show];
 }
 
 @end
