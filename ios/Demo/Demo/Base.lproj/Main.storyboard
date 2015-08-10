@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-6q-yco">
-                                <rect key="frame" x="253" y="285" width="94" height="30"/>
-                                <state key="normal" title="Browser login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="browserLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9d-Os-qtt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-xX-UV3">
                                 <rect key="frame" x="259" y="353" width="83" height="30"/>
                                 <state key="normal" title="In-app login">
@@ -35,11 +26,20 @@
                                     <action selector="inAppLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emA-Sr-J8a"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-sw-JAO">
-                                <rect key="frame" x="209" y="226" width="181" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-sw-JAO">
+                                <rect key="frame" x="210" y="226" width="181" height="30"/>
                                 <state key="normal" title="Safari view controller login"/>
                                 <connections>
                                     <action selector="safariViewControllerLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxG-zW-4Lm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-6q-yco">
+                                <rect key="frame" x="253" y="285" width="94" height="30"/>
+                                <state key="normal" title="Browser login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="browserLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9d-Os-qtt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,6 +48,7 @@
                             <constraint firstItem="UKB-xX-UV3" firstAttribute="top" secondItem="rsU-6q-yco" secondAttribute="bottom" constant="38" id="1me-3r-EwG"/>
                             <constraint firstAttribute="centerX" secondItem="rsU-6q-yco" secondAttribute="centerX" id="2BI-HI-DGh"/>
                             <constraint firstItem="rsU-6q-yco" firstAttribute="top" secondItem="CLC-sw-JAO" secondAttribute="bottom" constant="29" id="SiU-uo-Dgm"/>
+                            <constraint firstItem="CLC-sw-JAO" firstAttribute="centerX" secondItem="rsU-6q-yco" secondAttribute="centerX" id="ZZH-HZ-jOM"/>
                             <constraint firstAttribute="centerY" secondItem="rsU-6q-yco" secondAttribute="centerY" id="m90-wv-hpc"/>
                             <constraint firstAttribute="centerX" secondItem="UKB-xX-UV3" secondAttribute="centerX" id="yU7-lp-F90"/>
                         </constraints>
