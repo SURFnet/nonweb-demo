@@ -109,8 +109,4 @@
     [controller presentViewController:safariController animated:YES completion:nil];
 }
 
-
-
-
-
 @end
