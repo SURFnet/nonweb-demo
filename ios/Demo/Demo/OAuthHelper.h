@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <SafariServices/SafariServices.h>
+
 
 @interface OAuthHelper : NSObject
 
 typedef void (^AuthenticationBlock)(NSString *token);
 
-+ (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block;
-+ (BOOL)applicationOpenUrl:(NSURL*)url;
-+ (void)startWebViewAuthenticationFromController:(UIViewController*)viewController withBlock:(AuthenticationBlock)block;
++ (id)sharedInstance;
+- (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block;
+- (BOOL)applicationOpenUrl:(NSURL*)url;
+- (void)startWebViewAuthenticationFromController:(UIViewController*)viewController withBlock:(AuthenticationBlock)block;
+- (void)startSafariViewControllerAuthenticationFromController:(UIViewController*)controller withBlock:(AuthenticationBlock)block;
 @end

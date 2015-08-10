@@ -26,16 +26,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Called when the user selected the Safari View controller login
+- (IBAction)safariViewControllerLoginTouchUpInside:(id)sender {
+    [[OAuthHelper sharedInstance] startSafariViewControllerAuthenticationFromController:self withBlock:^(NSString *token) {
+        [self displayToken:token];
+    }];
+}
+
 // Called when the user selected the browser login
 - (IBAction)browserLoginTouchUpInside:(id)sender {
-    [[UIApplication sharedApplication] openURL:[OAuthHelper authorizationUrlWithBlock:^(NSString *token) {
+    [[UIApplication sharedApplication] openURL:[[OAuthHelper sharedInstance] authorizationUrlWithBlock:^(NSString *token) {
         [self displayToken:token];
     }]];
 }
 
 // Called when the user selected the in-app login
 - (IBAction)inAppLoginTouchUpInside:(id)sender {
-    [OAuthHelper startWebViewAuthenticationFromController:self withBlock:^(NSString *token) {
+    [[OAuthHelper sharedInstance] startWebViewAuthenticationFromController:self withBlock:^(NSString *token) {
         [self displayToken:token];
     }];
 }

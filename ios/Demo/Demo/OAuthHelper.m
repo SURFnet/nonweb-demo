@@ -21,13 +21,26 @@
 
 @interface OAuthHelper ()
 
+@property (nonatomic, copy) AuthenticationBlock authenticationBlock;
+@property (nonatomic, weak) UIViewController *viewController;
+
 @end
 
-static AuthenticationBlock authenticationBlock = nil;
-__weak static WebViewController *webViewController;
+
 
 @implementation OAuthHelper
 
+// Retrieves the singleton instace
++ (id)sharedInstance {
+    static OAuthHelper *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+// Initializes the singleton instance.
 - (id)init {
     self = [super init];
     if (self) {}
@@ -38,28 +51,28 @@ __weak static WebViewController *webViewController;
 
 // Returns the authorization URL and stores the block.
 // The block will be called when the application was opened from an URL, presumably because the login was successful.
-+ (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block {
-    authenticationBlock = [block copy];
+- (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block {
+    self.authenticationBlock = block;
     return [NSURL URLWithString: [NSString stringWithFormat: SURFNET_URL_FORMAT_STRING, SURFNET_BASEURL, SURFNET_OAUTH_CLIENT_ID, SURFNET_OAUTH_RESPONSE_TYPE, SURFNET_STATE, SURFNET_OAUTH_SCOPE]];
 }
 
 // Starts the webview which will handle the authentication in itself.
 // The block will be called on a successful login.
-+ (void)startWebViewAuthenticationFromController:(UIViewController*)viewController withBlock:(AuthenticationBlock)block {
+- (void)startWebViewAuthenticationFromController:(UIViewController*)controller withBlock:(AuthenticationBlock)block {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    webViewController = [storyBoard instantiateViewControllerWithIdentifier:@"webViewController"];
-    webViewController.requestUrl = [OAuthHelper authorizationUrlWithBlock:block];
-    [viewController presentViewController:webViewController animated:YES completion:nil];
+    self.viewController = [storyBoard instantiateViewControllerWithIdentifier:@"webViewController"];
+    ((WebViewController *)self.viewController).requestUrl = [self authorizationUrlWithBlock:block];
+    [controller presentViewController:self.viewController animated:YES completion:nil];
 }
 
 // Call this from the openUrl selector of your application. This function will parse the URL and retrieve the access
 // token from it. A positive return value means that the access token has been retrieved.
-+ (BOOL)applicationOpenUrl:(NSURL*)url {
-    if (webViewController) {
-        [webViewController dismissViewControllerAnimated:YES completion:nil];
-        webViewController = nil;
+- (BOOL)applicationOpenUrl:(NSURL*)url {
+    if (self.viewController) {
+        [self.viewController dismissViewControllerAnimated:YES completion:nil];
+        self.viewController = nil;
     }
-    if (authenticationBlock) {
+    if (self.authenticationBlock) {
         NSString *urlString = [url absoluteString];
         if ([urlString rangeOfString:@"#access_token="].location == NSNotFound) {
             // Unknown format
@@ -74,9 +87,9 @@ __weak static WebViewController *webViewController;
             NSURLQueryItem *accessTokenItem = urlComponents.queryItems[0];
             if ([accessTokenItem.name isEqualToString:@"access_token"]) {
                 // Just making it sure.
-                if (authenticationBlock) {
-                    authenticationBlock(accessTokenItem.value);
-                    authenticationBlock = nil;
+                if (self.authenticationBlock) {
+                    self.authenticationBlock(accessTokenItem.value);
+                    self.authenticationBlock = nil;
                     return YES;
                 }
             }
@@ -87,6 +100,17 @@ __weak static WebViewController *webViewController;
         return NO;
     }
 }
+
+// Starts the Safari View controller.
+- (void)startSafariViewControllerAuthenticationFromController:(UIViewController*)controller withBlock:(AuthenticationBlock)block {
+    NSURL *url = [self authorizationUrlWithBlock:block];
+    SFSafariViewController *safariController = [[SFSafariViewController alloc] initWithURL: url];
+    self.viewController = safariController;
+    [controller presentViewController:safariController animated:YES completion:nil];
+}
+
+
+
 
 
 @end

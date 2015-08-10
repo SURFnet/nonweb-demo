@@ -45,7 +45,7 @@
 
 - (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     NSLog(@"Application was opened from URL: %@", url);
-    return [OAuthHelper applicationOpenUrl: url];
+    return [[OAuthHelper sharedInstance] applicationOpenUrl: url];
 }
 
 @end

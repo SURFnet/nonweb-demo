@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="MainViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-6q-yco">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-6q-yco">
                                 <rect key="frame" x="253" y="285" width="94" height="30"/>
                                 <state key="normal" title="Browser login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,8 +26,8 @@
                                     <action selector="browserLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9d-Os-qtt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-xX-UV3">
-                                <rect key="frame" x="253" y="333" width="83" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-xX-UV3">
+                                <rect key="frame" x="259" y="353" width="83" height="30"/>
                                 <state key="normal" title="In-app login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -35,11 +35,19 @@
                                     <action selector="inAppLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emA-Sr-J8a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-sw-JAO">
+                                <rect key="frame" x="209" y="226" width="181" height="30"/>
+                                <state key="normal" title="Safari view controller login"/>
+                                <connections>
+                                    <action selector="safariViewControllerLoginTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxG-zW-4Lm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UKB-xX-UV3" firstAttribute="top" secondItem="rsU-6q-yco" secondAttribute="bottom" constant="38" id="1me-3r-EwG"/>
                             <constraint firstAttribute="centerX" secondItem="rsU-6q-yco" secondAttribute="centerX" id="2BI-HI-DGh"/>
+                            <constraint firstItem="rsU-6q-yco" firstAttribute="top" secondItem="CLC-sw-JAO" secondAttribute="bottom" constant="29" id="SiU-uo-Dgm"/>
                             <constraint firstAttribute="centerY" secondItem="rsU-6q-yco" secondAttribute="centerY" id="m90-wv-hpc"/>
                             <constraint firstAttribute="centerX" secondItem="UKB-xX-UV3" secondAttribute="centerX" id="yU7-lp-F90"/>
                         </constraints>
@@ -58,10 +66,10 @@
                         <viewControllerLayoutGuide type="bottom" id="c39-O5-vxF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uDi-pF-9yw">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miD-hW-21y">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="miD-hW-21y">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
