@@ -35,11 +35,16 @@ __weak static WebViewController *webViewController;
 }
 
 #pragma mark OAuth authentication flow handling
+
+// Returns the authorization URL and stores the block.
+// The block will be called when the application was opened from an URL, presumably because the login was successful.
 + (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block {
     authenticationBlock = [block copy];
     return [NSURL URLWithString: [NSString stringWithFormat: SURFNET_URL_FORMAT_STRING, SURFNET_BASEURL, SURFNET_OAUTH_CLIENT_ID, SURFNET_OAUTH_RESPONSE_TYPE, SURFNET_STATE, SURFNET_OAUTH_SCOPE]];
 }
 
+// Starts the webview which will handle the authentication in itself.
+// The block will be called on a successful login.
 + (void)startWebViewAuthenticationFromController:(UIViewController*)viewController withBlock:(AuthenticationBlock)block {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     webViewController = [storyBoard instantiateViewControllerWithIdentifier:@"webViewController"];
@@ -47,6 +52,8 @@ __weak static WebViewController *webViewController;
     [viewController presentViewController:webViewController animated:YES completion:nil];
 }
 
+// Call this from the openUrl selector of your application. This function will parse the URL and retrieve the access
+// token from it. A positive return value means that the access token has been retrieved.
 + (BOOL)applicationOpenUrl:(NSURL*)url {
     if (webViewController) {
         [webViewController dismissViewControllerAnimated:YES completion:nil];

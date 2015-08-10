@@ -40,6 +40,7 @@
     }];
 }
 
+// Displays the access token in a simple alert window.
 - (void)displayToken:(NSString*)token {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Access token"
                                                     message:[NSString stringWithFormat:@"Access token is: %@", token]
