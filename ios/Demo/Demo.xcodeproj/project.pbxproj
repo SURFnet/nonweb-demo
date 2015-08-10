@@ -14,6 +14,7 @@
 		89A6346A1B78D2430098C90D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A634691B78D2430098C90D /* Images.xcassets */; };
 		89A6346D1B78D2430098C90D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6346B1B78D2430098C90D /* LaunchScreen.xib */; };
 		89A634791B78D2430098C90D /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634781B78D2430098C90D /* DemoTests.m */; };
+		89A634841B78D6420098C90D /* OAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634831B78D6420098C90D /* OAuthHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		89A634721B78D2430098C90D /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A634771B78D2430098C90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A634781B78D2430098C90D /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
+		89A634821B78D6420098C90D /* OAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthHelper.h; sourceTree = "<group>"; };
+		89A634831B78D6420098C90D /* OAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				89A634691B78D2430098C90D /* Images.xcassets */,
 				89A6346B1B78D2430098C90D /* LaunchScreen.xib */,
 				89A6345C1B78D2430098C90D /* Supporting Files */,
+				89A634821B78D6420098C90D /* OAuthHelper.h */,
+				89A634831B78D6420098C90D /* OAuthHelper.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A634651B78D2430098C90D /* ViewController.m in Sources */,
+				89A634841B78D6420098C90D /* OAuthHelper.m in Sources */,
 				89A634621B78D2430098C90D /* AppDelegate.m in Sources */,
 				89A6345F1B78D2430098C90D /* main.m in Sources */,
 			);

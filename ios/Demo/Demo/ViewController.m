@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define SURFNET_AUTH_URL =
+
 @interface ViewController ()
 
 @end
@@ -22,6 +24,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)browserLoginTouchUpInside:(id)sender {
+
 }
 
 @end
