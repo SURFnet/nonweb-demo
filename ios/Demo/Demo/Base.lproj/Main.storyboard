@@ -44,7 +44,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="354"/>
+            <point key="canvasLocation" x="323" y="342"/>
+        </scene>
+        <!--WebViewController-->
+        <scene sceneID="qaK-Or-lbt">
+            <objects>
+                <viewController storyboardIdentifier="webViewController" title="WebViewController" id="DC0-E6-aRe" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LoG-7G-Auz"/>
+                        <viewControllerLayoutGuide type="bottom" id="c39-O5-vxF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uDi-pF-9yw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miD-hW-21y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="miD-hW-21y" firstAttribute="top" secondItem="uDi-pF-9yw" secondAttribute="top" id="Au3-Xd-gA6"/>
+                            <constraint firstAttribute="trailing" secondItem="miD-hW-21y" secondAttribute="trailing" id="CDu-mm-6uY"/>
+                            <constraint firstItem="c39-O5-vxF" firstAttribute="top" secondItem="miD-hW-21y" secondAttribute="bottom" id="S6F-A6-SDf"/>
+                            <constraint firstItem="miD-hW-21y" firstAttribute="leading" secondItem="uDi-pF-9yw" secondAttribute="leading" id="zhk-Kl-722"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="miD-hW-21y" id="WbB-T2-B4Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gH3-Y9-IZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="342"/>
         </scene>
     </scenes>
 </document>

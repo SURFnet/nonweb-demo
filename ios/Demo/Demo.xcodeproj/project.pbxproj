@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E38F14B225302B5622BC33B /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1540D26F835865D85F519610 /* libPods-Demo.a */; };
+		895C174E1B78EE1400AB7C65 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895C174D1B78EE1400AB7C65 /* WebViewController.m */; };
 		89A6345F1B78D2430098C90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6345E1B78D2430098C90D /* main.m */; };
 		89A634621B78D2430098C90D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634611B78D2430098C90D /* AppDelegate.m */; };
 		89A634651B78D2430098C90D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634641B78D2430098C90D /* ViewController.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		1540D26F835865D85F519610 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		598067E8B46A8672E9531D83 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		895C174C1B78EE1400AB7C65 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		895C174D1B78EE1400AB7C65 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		89A634591B78D2430098C90D /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6345D1B78D2430098C90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A6345E1B78D2430098C90D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				89A6345C1B78D2430098C90D /* Supporting Files */,
 				89A634821B78D6420098C90D /* OAuthHelper.h */,
 				89A634831B78D6420098C90D /* OAuthHelper.m */,
+				895C174C1B78EE1400AB7C65 /* WebViewController.h */,
+				895C174D1B78EE1400AB7C65 /* WebViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A634651B78D2430098C90D /* ViewController.m in Sources */,
+				895C174E1B78EE1400AB7C65 /* WebViewController.m in Sources */,
 				89A634841B78D6420098C90D /* OAuthHelper.m in Sources */,
 				89A634621B78D2430098C90D /* AppDelegate.m in Sources */,
 				89A6345F1B78D2430098C90D /* main.m in Sources */,

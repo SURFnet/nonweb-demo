@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface OAuthHelper : NSObject
 
 typedef void (^AuthenticationBlock)(NSString *token);
 
-+ (NSURL*)browserLoginUrlWithBlock:(AuthenticationBlock)block;
++ (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block;
 + (BOOL)applicationOpenUrl:(NSURL*)url;
++ (void)startWebViewAuthenticationFromController:(UIViewController*)viewController withBlock:(AuthenticationBlock)block;
 @end

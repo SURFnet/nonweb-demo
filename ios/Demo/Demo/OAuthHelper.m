@@ -8,6 +8,7 @@
 
 #import "OAuthHelper.h"
 #import "AFNetworking.h"
+#import "WebViewController.h"
 
 #define SURFNET_BASEURL             @"https://nonweb.demo.surfconext.nl/php-oauth-as/authorize.php"
 #define SURFNET_HTTP_CLIENT_ID      @"5dcbbc877e9955e3b29d7ca0baa4c7c4"
@@ -20,30 +21,37 @@
 
 @interface OAuthHelper ()
 
-@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
-
 @end
 
 static AuthenticationBlock authenticationBlock = nil;
+__weak static WebViewController *webViewController;
 
 @implementation OAuthHelper
 
 - (id)init {
     self = [super init];
-    if (self) {
-        self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:SURFNET_BASEURL]];
-        self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
-    }
+    if (self) {}
     return self;
 }
 
 #pragma mark OAuth authentication flow handling
-+ (NSURL*)browserLoginUrlWithBlock:(AuthenticationBlock)block {
++ (NSURL*)authorizationUrlWithBlock:(AuthenticationBlock)block {
     authenticationBlock = [block copy];
     return [NSURL URLWithString: [NSString stringWithFormat: SURFNET_URL_FORMAT_STRING, SURFNET_BASEURL, SURFNET_OAUTH_CLIENT_ID, SURFNET_OAUTH_RESPONSE_TYPE, SURFNET_STATE, SURFNET_OAUTH_SCOPE]];
 }
 
++ (void)startWebViewAuthenticationFromController:(UIViewController*)viewController withBlock:(AuthenticationBlock)block {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    webViewController = [storyBoard instantiateViewControllerWithIdentifier:@"webViewController"];
+    webViewController.requestUrl = [OAuthHelper authorizationUrlWithBlock:block];
+    [viewController presentViewController:webViewController animated:YES completion:nil];
+}
+
 + (BOOL)applicationOpenUrl:(NSURL*)url {
+    if (webViewController) {
+        [webViewController dismissViewControllerAnimated:YES completion:nil];
+        webViewController = nil;
+    }
     if (authenticationBlock) {
         NSString *urlString = [url absoluteString];
         if ([urlString rangeOfString:@"#access_token="].location == NSNotFound) {
@@ -72,5 +80,6 @@ static AuthenticationBlock authenticationBlock = nil;
         return NO;
     }
 }
+
 
 @end

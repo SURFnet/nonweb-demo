@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "OAuthHelper.h"
+#import "WebViewController.h"
 
 @interface ViewController ()
 
@@ -27,13 +28,16 @@
 
 // Called when the user selected the browser login
 - (IBAction)browserLoginTouchUpInside:(id)sender {
-    [[UIApplication sharedApplication] openURL:[OAuthHelper browserLoginUrlWithBlock:^(NSString *token) {
+    [[UIApplication sharedApplication] openURL:[OAuthHelper authorizationUrlWithBlock:^(NSString *token) {
         [self displayToken:token];
     }]];
 }
 
 // Called when the user selected the in-app login
 - (IBAction)inAppLoginTouchUpInside:(id)sender {
+    [OAuthHelper startWebViewAuthenticationFromController:self withBlock:^(NSString *token) {
+        [self displayToken:token];
+    }];
 }
 
 - (void)displayToken:(NSString*)token {
