@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C1E660C3-49F3-4215-B861-E530D16E0953</string>
+	<string>21E7A609-AB22-482E-9CE4-C695A36ED8A5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>OAuthDemo</string>
+	<string>Demo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6293EF66EC0DBCCD0CA0B4DFA596B7F773DB912D</key>
 		<string>https://github.com/dzolnai/nonweb-demo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ios/OAuthDemo.xcworkspace</string>
+	<string>ios/Demo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6293EF66EC0DBCCD0CA0B4DFA596B7F773DB912D</key>
