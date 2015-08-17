@@ -1,0 +1,14 @@
+source 'ssh://git@github.com/CocoaPods/Specs.git'
+
+xcodeproj 'Demo/Demo.xcodeproj'
+
+platform :ios, '8.0'
+
+target 'Demo' do
+
+end
+
+target 'DemoTests' do
+
+end
+

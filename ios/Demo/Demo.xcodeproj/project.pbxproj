@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895C174E1B78EE1400AB7C65 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895C174D1B78EE1400AB7C65 /* WebViewController.m */; };
+		8994325E1B792D1D00C11149 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8994325D1B792D1D00C11149 /* SafariServices.framework */; };
 		89A6345F1B78D2430098C90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6345E1B78D2430098C90D /* main.m */; };
 		89A634621B78D2430098C90D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634611B78D2430098C90D /* AppDelegate.m */; };
 		89A634651B78D2430098C90D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634641B78D2430098C90D /* ViewController.m */; };
@@ -14,6 +16,7 @@
 		89A6346A1B78D2430098C90D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A634691B78D2430098C90D /* Images.xcassets */; };
 		89A6346D1B78D2430098C90D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A6346B1B78D2430098C90D /* LaunchScreen.xib */; };
 		89A634791B78D2430098C90D /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634781B78D2430098C90D /* DemoTests.m */; };
+		89A634841B78D6420098C90D /* OAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A634831B78D6420098C90D /* OAuthHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		895C174C1B78EE1400AB7C65 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		895C174D1B78EE1400AB7C65 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		8994325D1B792D1D00C11149 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		89A634591B78D2430098C90D /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6345D1B78D2430098C90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A6345E1B78D2430098C90D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 		89A634721B78D2430098C90D /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A634771B78D2430098C90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A634781B78D2430098C90D /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
+		89A634821B78D6420098C90D /* OAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthHelper.h; sourceTree = "<group>"; };
+		89A634831B78D6420098C90D /* OAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8994325E1B792D1D00C11149 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +69,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047B29916F64CD098F6056BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8994325D1B792D1D00C11149 /* SafariServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89A634501B78D2430098C90D = {
 			isa = PBXGroup;
 			children = (
 				89A6345B1B78D2430098C90D /* Demo */,
 				89A634751B78D2430098C90D /* DemoTests */,
 				89A6345A1B78D2430098C90D /* Products */,
+				047B29916F64CD098F6056BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +107,10 @@
 				89A634691B78D2430098C90D /* Images.xcassets */,
 				89A6346B1B78D2430098C90D /* LaunchScreen.xib */,
 				89A6345C1B78D2430098C90D /* Supporting Files */,
+				89A634821B78D6420098C90D /* OAuthHelper.h */,
+				89A634831B78D6420098C90D /* OAuthHelper.m */,
+				895C174C1B78EE1400AB7C65 /* WebViewController.h */,
+				895C174D1B78EE1400AB7C65 /* WebViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -220,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A634651B78D2430098C90D /* ViewController.m in Sources */,
+				895C174E1B78EE1400AB7C65 /* WebViewController.m in Sources */,
+				89A634841B78D6420098C90D /* OAuthHelper.m in Sources */,
 				89A634621B78D2430098C90D /* AppDelegate.m in Sources */,
 				89A6345F1B78D2430098C90D /* main.m in Sources */,
 			);
@@ -299,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -337,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +444,7 @@
 				89A6347E1B78D2430098C90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89A6347F1B78D2430098C90D /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +453,7 @@
 				89A634811B78D2430098C90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
