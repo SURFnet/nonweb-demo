@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>aabcf7ac-3a5e-4811-ba0a-88c88344d502</SharedGUID>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)css\default-universal.css" />
+    <Content Include="$(MSBuildThisFileDirectory)js\constants.js" />
+    <Content Include="$(MSBuildThisFileDirectory)js\navigator.js" />
+    <Content Include="$(MSBuildThisFileDirectory)js\default.js" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\broker\broker.css" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\broker\broker.html" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\broker\broker.js" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\browser\browser.css" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\browser\browser.html" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\browser\browser.js" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\home\home.js" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\home\home.html" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\webview\webview.css" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\webview\webview.html" />
+    <Content Include="$(MSBuildThisFileDirectory)pages\webview\webview.js" />
+  </ItemGroup>
+</Project>

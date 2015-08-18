@@ -1,0 +1,11 @@
+﻿.webviewContainer {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.webviewContainer #webview {
+    width: 100%;
+    height: 100%;
+}
+

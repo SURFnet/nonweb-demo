@@ -1,0 +1,15 @@
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bin\ARM\Debug\ReverseMap\resources.pri
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bin\ARM\Debug\AppxManifest.xml
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bin\ARM\Debug\Demo.WindowsPhone.build.appxrecipe
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\priconfig.xml
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\priconfig.xml.intermediate
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\layout.resfiles
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\layout.resfiles.intermediate
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\resources.resfiles
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\resources.resfiles.intermediate
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\pri.resfiles
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\pri.resfiles.intermediate
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\qualifiers.txt
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\qualifiers.txt.intermediate
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.WindowsPhone\bld\ARM\Debug\ProjectArchitectures.txt
