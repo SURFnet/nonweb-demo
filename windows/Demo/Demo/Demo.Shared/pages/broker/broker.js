@@ -19,8 +19,12 @@
         },
 
         _openBroker: function () {
+            // documentation on how to implement the WebAuthenticationBroker on Windows and Windows Phone
             // http://blog.stevenedouard.com/andcontinue-methods-for-windows-universal-apps/
+
+            // How to get current applicationCallbackUri:
             // app URL: Windows.Security.Authentication.Web.WebAuthenticationBroker.getCurrentApplicationCallbackUri().absoluteUri
+
 
             var constants = Surfnet.Constants;
             var clientId = (WinJS.Utilities.isPhone) ? constants.SFOAUTH_CLIENT_ID_PHONE : constants.SFOAUTH_CLIENT_ID;
