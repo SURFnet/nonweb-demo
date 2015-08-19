@@ -39,7 +39,18 @@
                     Windows.Security.Authentication.Web.WebAuthenticationOptions.none, startURI)
                     .done(function (result) {
                         var responseStatus = document.getElementById("responseStatus");
-                        document.getElementById("responseToken").value = result.responseData;
+                        var token = "";
+                        var responseData = result.responseData.replace("#access_token", "?access_token");
+                        var URI = new Windows.Foundation.Uri(responseData);
+                        var queryParams = URI.queryParsed;
+                        // FIXME: this is actually an ugly way to retrieve the access token, and not safe at all.
+                        // best way would be to iterate over the params to retrieve the correct token, but since this is
+                        // for demo purposes only, we use this way.
+                        if (queryParams.length > 0) {
+                            token = queryParams[0].value;
+                        }
+
+                        document.getElementById("responseToken").value = token;
                         if (result.responseStatus === Windows.Security.Authentication.Web.WebAuthenticationStatus.errorHttp) {
                             WinJS.Utilities.addClass(responseStatus, "error");
                             responseStatus.value = "Error returned: " + result.responseErrorDetail;

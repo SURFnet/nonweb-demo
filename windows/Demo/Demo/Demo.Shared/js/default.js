@@ -10,11 +10,25 @@
     var ui = WinJS.UI;
 
     app.addEventListener("activated", function (args) {
+
         if (args.detail.kind == activation.ActivationKind.webAuthenticationBrokerContinuation) {
 
             //take oauth response and continue login process on Windows Phone 8.1
             var responseStatus = document.getElementById("responseStatus");
-            document.getElementById("responseToken").value = args.detail.webAuthenticationResult.responseData;
+            var token = "";
+            var responseData = args.detail.webAuthenticationResult.responseData.replace("#access_token", "?access_token");
+            if (responseData.length > 0) {
+                var URI = new Windows.Foundation.Uri(responseData);
+                var queryParams = URI.queryParsed;
+                // FIXME: this is actually an ugly way to retrieve the access token, and not safe at all.
+                // best way would be to iterate over the params to retrieve the correct token, but since this is
+                // for demo purposes only, we use this way.
+                if (queryParams.length > 0) {
+                    token = queryParams[0].value;
+                }
+            }
+            document.getElementById("responseToken").value = token;
+
             if (args.detail.webAuthenticationResult.responseStatus === Windows.Security.Authentication.Web.WebAuthenticationStatus.errorHttp) {
                 WinJS.Utilities.addClass(responseStatus, "error");
                 responseStatus.value = "Error returned: " + args.detail.webAuthenticationResult.responseErrorDetail;
@@ -26,10 +40,18 @@
 
         if (args.detail.kind == activation.ActivationKind.protocol) {
 
-            //take oauth response and continue login process on Windows Phone 8.1
-            var protocolUrl = args.detail.uri.rawUri;
+            var token = "";
+            var responseData =args.detail.uri.rawUri.replace("#access_token", "?access_token");
+            var URI = new Windows.Foundation.Uri(responseData);
+            var queryParams = URI.queryParsed;
+            // FIXME: this is actually an ugly way to retrieve the access token, and not safe at all.
+            // best way would be to iterate over the params to retrieve the correct token, but since this is
+            // for demo purposes only, we use this way.
+            if (queryParams.length > 0) {
+                token = queryParams[0].value;
+            }
             var responseStatus = document.getElementById("responseStatus");
-            document.getElementById("responseToken").value = protocolUrl;
+            document.getElementById("responseToken").value = token;
         }
 
 
