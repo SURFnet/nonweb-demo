@@ -10,6 +10,30 @@
     var ui = WinJS.UI;
 
     app.addEventListener("activated", function (args) {
+        if (args.detail.kind == activation.ActivationKind.webAuthenticationBrokerContinuation) {
+
+            //take oauth response and continue login process on Windows Phone 8.1
+            var responseStatus = document.getElementById("responseStatus");
+            document.getElementById("responseToken").value = args.detail.webAuthenticationResult.responseData;
+            if (args.detail.webAuthenticationResult.responseStatus === Windows.Security.Authentication.Web.WebAuthenticationStatus.errorHttp) {
+                WinJS.Utilities.addClass(responseStatus, "error");
+                responseStatus.value = "Error returned: " + args.detail.webAuthenticationResult.responseErrorDetail;
+            } else {
+                WinJS.Utilities.addClass(responseStatus, "success");
+                responseStatus.value = "Status returned by WebAuth broker: " + args.detail.webAuthenticationResult.responseStatus;
+            }
+        }
+
+        if (args.detail.kind == activation.ActivationKind.protocol) {
+
+            //take oauth response and continue login process on Windows Phone 8.1
+            var protocolUrl = args.detail.uri.rawUri;
+            var responseStatus = document.getElementById("responseStatus");
+            document.getElementById("responseToken").value = protocolUrl;
+        }
+
+
+
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                 // TODO: This application has been newly launched. Initialize

@@ -1,0 +1,22 @@
+﻿.responseInput {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 30px;
+}
+
+    .responseInput.error {
+        background-color: #660000;
+    }
+
+    .responseInput.success {
+        background-color: #006600;
+        color: black;
+    }
+
+#backButton {
+    height: 30px;
+    margin: 10px;
+    background-color: #440000;
+}

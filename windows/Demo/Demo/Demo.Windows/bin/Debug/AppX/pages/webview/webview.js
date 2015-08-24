@@ -14,9 +14,9 @@
             var backButton = this._layoutRoot.querySelector("#backButton");
             backButton.addEventListener("click", this._goBack);
             var constants = Surfnet.Constants;
-            var urlString = constants.AUTH_URL + "?client_id=" + constants.SFOAUTH_CLIENT_ID + "&response_type=" + constants.RESPONSE_TYPE + "&state=" + constants.STATE + "&scope=" + constants.SCOPE;
-            var url = new Windows.Foundation.Uri(urlString);
-            this._webview.navigate(url);
+            var urlString = constants.AUTH_URL + "?client_id=" + constants.HTTP_CLIENT_ID + "&response_type=" + constants.RESPONSE_TYPE + "&state=" + constants.STATE + "&scope=" + constants.SCOPE;
+
+            this._webview.navigate(urlString);
         },
 
         _goBack: function () {

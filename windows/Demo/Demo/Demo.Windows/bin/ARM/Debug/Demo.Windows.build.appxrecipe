@@ -7,86 +7,86 @@
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>64c9a43a-7ccb-4b5e-a48e-92cdfc41a094</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\bld\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\bld\ARM\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\bin\ARM\Debug\AppxManifest.xml">
+    <AppXManifest Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\bin\ARM\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\css\default.css">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\css\default.css">
       <PackagePath>css\default.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\pages\home\home.css">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\pages\home\home.css">
       <PackagePath>pages\home\home.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\css\default-universal.css">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\css\default-universal.css">
       <PackagePath>css\default-universal.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\broker\broker.css">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\broker\broker.css">
       <PackagePath>pages\broker\broker.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\browser\browser.css">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\browser\browser.css">
       <PackagePath>pages\browser\browser.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\webview\webview.css">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\webview\webview.css">
       <PackagePath>pages\webview\webview.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\default.html">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\default.html">
       <PackagePath>default.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\broker\broker.html">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\broker\broker.html">
       <PackagePath>pages\broker\broker.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\browser\browser.html">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\browser\browser.html">
       <PackagePath>pages\browser\browser.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\home\home.html">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\home\home.html">
       <PackagePath>pages\home\home.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\webview\webview.html">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\webview\webview.html">
       <PackagePath>pages\webview\webview.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\images\logo.png">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\images\smalllogo.png">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\images\smalllogo.png">
       <PackagePath>images\smalllogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\images\splashscreen.png">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\images\splashscreen.png">
       <PackagePath>images\splashscreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\images\storelogo.png">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\images\storelogo.png">
       <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\js\constants.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\js\constants.js">
       <PackagePath>js\constants.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\js\navigator.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\js\default.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\js\default.js">
       <PackagePath>js\default.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\broker\broker.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\broker\broker.js">
       <PackagePath>pages\broker\broker.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\browser\browser.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\browser\browser.js">
       <PackagePath>pages\browser\browser.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\home\home.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\home\home.js">
       <PackagePath>pages\home\home.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Shared\pages\webview\webview.js">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Shared\pages\webview\webview.js">
       <PackagePath>pages\webview\webview.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Anthony\Desktop\SURFnet\Windows\Demo\Demo\Demo.Windows\bin\ARM\Debug\ReverseMap\resources.pri">
+    <AppxPackagedFile Include="Z:\Windows\surfnet-nonweb-demo\windows\Demo\Demo\Demo.Windows\bin\ARM\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
