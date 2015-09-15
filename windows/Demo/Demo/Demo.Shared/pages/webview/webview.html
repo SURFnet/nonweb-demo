@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>homePage</title>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/webview/webview.css" rel="stylesheet" />
+    <script src="/pages/webview/webview.js"></script>
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment homepage">
+        <header aria-label="Header content" role="banner">
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">x-ms-webview sample</span>
+            </h1>
+            <button class="back" id="backButton">Back</button>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="webviewContainer">
+                <p>Token:</p>
+                <p><input id="responseToken" class="responseInput" value="" /></p>
+                <x-ms-webview id="webview"></x-ms-webview>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
