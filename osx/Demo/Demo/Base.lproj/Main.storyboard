@@ -676,7 +676,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YHQ-Y6-vVE">
-                                <rect key="frame" x="14" y="222" width="185" height="32"/>
+                                <rect key="frame" x="14" y="180" width="185" height="32"/>
                                 <buttonCell key="cell" type="push" title="Open webview browser" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ylY-P3-7I6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -685,8 +685,29 @@
                                     </connections>
                                 </buttonCell>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pkF-9a-9jk">
+                                <rect key="frame" x="18" y="216" width="444" height="34"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="bDQ-ml-YD8">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">'Open webview browser' will open an in-app webView where 
+the user can be authenticated.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-fV-kqk">
+                                <rect key="frame" x="18" y="101" width="444" height="51"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="YRC-Gt-pI4">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">'Open browser' will open the default Web Browser where the user
+can log in to authenticate. after authentication, the user will get
+confirrmation inside the app.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qtu-2W-9BE">
-                                <rect key="frame" x="14" y="189" width="185" height="32"/>
+                                <rect key="frame" x="14" y="65" width="185" height="32"/>
                                 <buttonCell key="cell" type="push" title="Open browser" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ucE-lg-Ee6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -697,11 +718,17 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="YHQ-Y6-vVE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="AOI-Q3-MWj"/>
-                            <constraint firstItem="qtu-2W-9BE" firstAttribute="top" secondItem="YHQ-Y6-vVE" secondAttribute="bottom" constant="12" id="a7G-i0-gOM"/>
-                            <constraint firstItem="qtu-2W-9BE" firstAttribute="leading" secondItem="YHQ-Y6-vVE" secondAttribute="leading" id="bqU-uV-pL9"/>
-                            <constraint firstItem="qtu-2W-9BE" firstAttribute="width" secondItem="YHQ-Y6-vVE" secondAttribute="width" id="nse-qI-LU7"/>
-                            <constraint firstItem="YHQ-Y6-vVE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="wDe-0w-XCa"/>
+                            <constraint firstItem="qtu-2W-9BE" firstAttribute="top" secondItem="oVp-fV-kqk" secondAttribute="bottom" constant="8" symbolic="YES" id="6zK-6C-62b"/>
+                            <constraint firstItem="YHQ-Y6-vVE" firstAttribute="top" secondItem="pkF-9a-9jk" secondAttribute="bottom" constant="8" symbolic="YES" id="9Yz-8Z-nWO"/>
+                            <constraint firstAttribute="trailing" secondItem="pkF-9a-9jk" secondAttribute="trailing" constant="20" symbolic="YES" id="HD8-4l-zB6"/>
+                            <constraint firstItem="YHQ-Y6-vVE" firstAttribute="leading" secondItem="oVp-fV-kqk" secondAttribute="leading" id="WbZ-85-kRy"/>
+                            <constraint firstItem="qtu-2W-9BE" firstAttribute="leading" secondItem="oVp-fV-kqk" secondAttribute="leading" id="akP-Lj-mfA"/>
+                            <constraint firstItem="YHQ-Y6-vVE" firstAttribute="leading" secondItem="pkF-9a-9jk" secondAttribute="leading" id="r2r-Q1-rUO"/>
+                            <constraint firstItem="YHQ-Y6-vVE" firstAttribute="trailing" secondItem="qtu-2W-9BE" secondAttribute="trailing" id="rnp-Qq-dOb"/>
+                            <constraint firstItem="pkF-9a-9jk" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="tt2-MH-TGo"/>
+                            <constraint firstItem="pkF-9a-9jk" firstAttribute="trailing" secondItem="oVp-fV-kqk" secondAttribute="trailing" id="uRR-os-UyG"/>
+                            <constraint firstItem="pkF-9a-9jk" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="vsu-qd-os7"/>
+                            <constraint firstItem="oVp-fV-kqk" firstAttribute="top" secondItem="YHQ-Y6-vVE" secondAttribute="bottom" constant="35" id="ytd-b5-8DK"/>
                         </constraints>
                     </view>
                     <connections>
