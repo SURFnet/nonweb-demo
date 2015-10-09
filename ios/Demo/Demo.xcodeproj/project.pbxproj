@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3249B88B603E603D009C3586 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 974D85B476F4D15D777931E5 /* libPods-Demo.a */; };
 		895C174E1B78EE1400AB7C65 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895C174D1B78EE1400AB7C65 /* WebViewController.m */; };
 		8994325E1B792D1D00C11149 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8994325D1B792D1D00C11149 /* SafariServices.framework */; };
 		89A6345F1B78D2430098C90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A6345E1B78D2430098C90D /* main.m */; };
@@ -31,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B1B2D8E4CB49BC979CDED56 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		895C174C1B78EE1400AB7C65 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		895C174D1B78EE1400AB7C65 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8994325D1B792D1D00C11149 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -50,8 +48,6 @@
 		89A634781B78D2430098C90D /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		89A634821B78D6420098C90D /* OAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthHelper.h; sourceTree = "<group>"; };
 		89A634831B78D6420098C90D /* OAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthHelper.m; sourceTree = "<group>"; };
-		974D85B476F4D15D777931E5 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4169F71ADD74160C853F8D5 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +56,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8994325E1B792D1D00C11149 /* SafariServices.framework in Frameworks */,
-				3249B88B603E603D009C3586 /* libPods-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,18 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				8994325D1B792D1D00C11149 /* SafariServices.framework */,
-				974D85B476F4D15D777931E5 /* libPods-Demo.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7977E4FCDD1F2EBD6D3A1BCC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2B1B2D8E4CB49BC979CDED56 /* Pods-Demo.debug.xcconfig */,
-				B4169F71ADD74160C853F8D5 /* Pods-Demo.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		89A634501B78D2430098C90D = {
@@ -99,7 +84,6 @@
 				89A634751B78D2430098C90D /* DemoTests */,
 				89A6345A1B78D2430098C90D /* Products */,
 				047B29916F64CD098F6056BB /* Frameworks */,
-				7977E4FCDD1F2EBD6D3A1BCC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,11 +148,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A6347C1B78D2430098C90D /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
-				04A53B83FD950BD6AD70B4EC /* Check Pods Manifest.lock */,
 				89A634551B78D2430098C90D /* Sources */,
 				89A634561B78D2430098C90D /* Frameworks */,
 				89A634571B78D2430098C90D /* Resources */,
-				32D339143385B47D831D3AAF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,39 +235,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		04A53B83FD950BD6AD70B4EC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		32D339143385B47D831D3AAF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89A634551B78D2430098C90D /* Sources */ = {
@@ -422,7 +371,6 @@
 		};
 		89A6347D1B78D2430098C90D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B1B2D8E4CB49BC979CDED56 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
@@ -434,7 +382,6 @@
 		};
 		89A6347E1B78D2430098C90D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4169F71ADD74160C853F8D5 /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
