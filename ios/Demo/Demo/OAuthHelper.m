@@ -7,7 +7,6 @@
 //
 
 #import "OAuthHelper.h"
-#import "AFNetworking.h"
 #import "WebViewController.h"
 
 #define SURFNET_BASEURL             @"https://nonweb.demo.surfconext.nl/php-oauth-as/authorize.php"
